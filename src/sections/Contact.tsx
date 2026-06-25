@@ -92,7 +92,9 @@ function Contact() {
             className='mt-4 text-[30px] font-semibold leading-tight text-black sm:text-[36px] lg:text-[40px]'
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            Experience Exceptional Care
+            Experience
+            <br />
+             Exceptional Care
           </motion.h2>
 
           <motion.p
@@ -150,9 +152,9 @@ function Contact() {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
           transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
-          className='rounded-[24px] bg-[#EFF8FF] p-6 shadow-md sm:p-8 lg:p-10'
+          className='rounded-[24px] bg-[#F8F8F8] p-6 shadow-md sm:p-8 lg:p-10'
         >
-          <h3 className='text-[28px] font-semibold text-black sm:text-[30px]'>
+          <h3 className='text-[28px] font-semibold text-black text-center sm:text-[30px]'>
             Send Us A Message
           </h3>
 

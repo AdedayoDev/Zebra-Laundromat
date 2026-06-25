@@ -39,7 +39,7 @@ function About() {
             About Zebra Laundromat
           </p>
           <h2 className='about-heading text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-[42px]'>
-            Redefining Laundry & Cleaning
+            Redefining Laundry & Cleaning Excellence
           </h2>
 
           <div className='mt-6 space-y-6'>

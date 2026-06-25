@@ -23,7 +23,7 @@ function LandingPage() {
       <OurProcess />
       <Results />
       <Testimonials />
-      <CTA backgroundImage='https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1600&q=80' />
+      <CTA backgroundImage='hero-image.svg' />
       <Contact />
       <FutureExpansion />
       <Location />

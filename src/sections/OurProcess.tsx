@@ -109,7 +109,7 @@ function OurProcess() {
             className='mt-4 text-[30px] font-bold leading-[120%] text-black sm:text-[36px] lg:text-[40px]'
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            Simple, Efficient, Professional
+            Simple. Efficient. Professional
             <br />
             4-Step Process
           </motion.h2>

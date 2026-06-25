@@ -82,6 +82,7 @@ function CTA({ backgroundImage }: CTAProps) {
             className='mt-10 flex flex-col gap-4 sm:flex-row'
           >
             <Button
+            variant='tertiary'
               onClick={scrollToContact}
               className='w-full rounded-lg bg-[#00DA40] px-6 py-3 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-[#00C23A] sm:w-auto'
             >

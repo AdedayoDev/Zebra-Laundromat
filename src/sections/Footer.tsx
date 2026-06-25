@@ -45,8 +45,7 @@ function Footer() {
               className='mt-5 text-[16px] leading-[170%] text-white/90'
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
-              Professional laundry and cleaning services delivered with
-              excellence, reliability, and care.
+              Delivering professional laundry and cleaning services with excellence, reliability, and care.
             </p>
             <div className='mt-6 flex items-center gap-4'>
               <a
@@ -164,18 +163,12 @@ function Footer() {
           transition={{ duration: 0.5, delay: 0.18, ease: "easeOut" }}
           className='mt-16 border-t border-white/15 pt-6'
         >
-          <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+          <div className=''>
             <p
               className='text-[14px] text-white/70'
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               © 2026 Zebra Laundromat. All Rights Reserved.
-            </p>
-            <p
-              className='text-[14px] text-white/70'
-              style={{ fontFamily: "Manrope, sans-serif" }}
-            >
-              Designed with Excellence
             </p>
           </div>
         </motion.div>

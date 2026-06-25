@@ -4,6 +4,7 @@ const variantClasses = {
   primary: "border-transparent bg-[#002590] text-white hover:scale-[1.03]",
   secondary:
     "border border-[#002590] bg-transparent text-[#002590] hover:bg-slate-50",
+    tertiary: "border-transparent bg-[#00DA40] text-white hover:scale-[1.03]",
 };
 
 function Button({

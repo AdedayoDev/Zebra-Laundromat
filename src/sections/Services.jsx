@@ -1,3 +1,4 @@
+import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Button from "../components/Button/Button";
 
@@ -29,6 +30,13 @@ const serviceCards = [
 ];
 
 function Services() {
+  const handleBookService = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section
       id='services'
@@ -91,14 +99,16 @@ function Services() {
                     key={feature}
                     className='flex items-start gap-3 text-base font-medium text-black'
                   >
-                    <span className='mt-1 text-[#002590]'>•</span>
+                    <CheckCircle2 className='mt-1 h-5 w-5 shrink-0 text-[#002590]' />
                     <span className='font-[Manrope]'>{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <div className='mt-8'>
-                <Button variant='primary'>Book This Service</Button>
+                <Button variant='primary' onClick={handleBookService}>
+                  Book This Service
+                </Button>
               </div>
             </motion.article>
           ))}

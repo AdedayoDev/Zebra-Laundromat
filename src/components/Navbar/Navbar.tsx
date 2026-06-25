@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { NavItem } from "../../types";
 import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "../navigation/MobileMenu";
 
 const navigationItems: NavItem[] = [
   { label: "Home", href: "#home", id: "home" },
@@ -51,17 +51,27 @@ function Navbar() {
 
   const handleNavSelect = (sectionId: string) => {
     setActiveSection(sectionId);
+
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white transition-all duration-300 ${
+      className={`sticky top-0 z-[55] w-full bg-white/95 backdrop-blur-md transition-all duration-300 ${
         isScrolled ? "shadow-[0_8px_30px_rgba(0,0,0,0.06)]" : "shadow-none"
       }`}
     >
       <nav
         aria-label='Primary navigation'
-        className='mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8'
+        className='relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8'
       >
         <Logo onNavigate={() => handleNavSelect("home")} />
 

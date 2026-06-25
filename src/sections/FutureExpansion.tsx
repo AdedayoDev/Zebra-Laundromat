@@ -10,7 +10,7 @@ const cards: ExpansionCard[] = [
   {
     title: "Residential Cleaning Services",
     image:
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
     features: [
       "Furniture Cleaning",
       "Rug & Carpet Care",
@@ -21,7 +21,7 @@ const cards: ExpansionCard[] = [
   {
     title: "Commercial Cleaning Services",
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+      "future-2.svg",
     features: [
       "Executive Office Cleaning",
       "Retail & Boutique Care",
@@ -81,7 +81,7 @@ function FutureExpansion() {
           comprehensive range of residential and commercial cleaning solutions.
         </motion.p>
 
-        <div className='mt-16 grid gap-8 md:grid-cols-2'>
+        <div className='mt-16  grid gap-8 md:grid-cols-2'>
           {cards.map((card, index) => (
             <motion.article
               key={card.title}
@@ -99,7 +99,7 @@ function FutureExpansion() {
                 scale: 1.01,
                 boxShadow: "0 20px 45px -20px rgba(0,0,0,0.25)",
               }}
-              className='group relative overflow-hidden rounded-[24px] shadow-lg'
+              className='group relative overflow-hidden rounded-[24px]  shadow-lg'
             >
               <div
                 className='absolute right-4 top-4 z-10 rounded-full bg-[#EF4444] px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-white'
@@ -115,9 +115,9 @@ function FutureExpansion() {
                 className='h-[400px] w-full object-cover transition duration-700 ease-out group-hover:scale-105 sm:h-[450px] lg:h-[550px]'
               />
 
-              <div className='absolute inset-x-4 bottom-4 rounded-[24px] border border-white/20 bg-white/15 p-6 backdrop-blur-md transition duration-500 ease-out group-hover:-translate-y-1'>
+              <div className='absolute inset-x-4 bottom-4 rounded-[24px] border border-white/20 bg-white/75 p-6 backdrop-blur-md  transition duration-500 ease-out group-hover:-translate-y-1'>
                 <h3
-                  className='text-[24px] font-bold text-white'
+                  className='text-[24px] font-bold text-[#000000]'
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   {card.title}
@@ -126,7 +126,7 @@ function FutureExpansion() {
                   {card.features.map((feature) => (
                     <li
                       key={feature}
-                      className='flex items-center gap-3 text-[16px] text-white'
+                      className='flex items-center gap-3 text-[16px] text-[#444748]'
                       style={{
                         fontFamily: "Manrope, sans-serif",
                         fontWeight: 500,

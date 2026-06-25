@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const BUSINESS_ADDRESS = "Lagos, Nigeria";
 const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(BUSINESS_ADDRESS)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS_ADDRESS)}`;
+// const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS_ADDRESS)}`;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -15,7 +15,7 @@ function Location() {
       className='bg-[#00DA40] px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
       aria-labelledby='location-heading'
     >
-      <div className='mx-auto max-w-7xl'>
+      <div className='mx-auto text-center max-w-7xl'>
         <motion.p
           initial='hidden'
           whileInView='visible'
@@ -41,18 +41,6 @@ function Location() {
           Our Address Location
         </motion.h2>
 
-        <motion.p
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeUp}
-          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-          className='mt-4 text-[18px] font-medium text-black/80 sm:text-[18px]'
-          style={{ fontFamily: "Inter, sans-serif" }}
-        >
-          📍 {BUSINESS_ADDRESS}
-        </motion.p>
-
         <motion.div
           initial='hidden'
           whileInView='visible'
@@ -72,7 +60,7 @@ function Location() {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.2 }}
@@ -88,7 +76,7 @@ function Location() {
           >
             Open In Google Maps
           </a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
