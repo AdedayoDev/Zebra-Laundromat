@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #002590;
+  --text-color: #000000;
+  --white-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  background: #ffffff;
+  color: var(--text-color);
+}
+
+.hero-heading {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.about-label {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.about-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.about-text {
+  font-family: "Inter", sans-serif;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.active-link {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.book-service-btn {
+  background: var(--primary-color);
+  color: var(--white-color);
+  transition: all 0.3s ease;
+}
+
+.book-service-btn:hover {
+  transform: scale(1.03);
+}
