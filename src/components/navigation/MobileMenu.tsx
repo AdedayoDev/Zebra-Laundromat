@@ -42,14 +42,22 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
     setIsOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className='lg:hidden'>
       <motion.button
         type='button'
-        onClick={() => setIsOpen(true)}
+        onClick={toggleMenu}
         whileTap={{ scale: 0.96 }}
         className='relative z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#002590]/15 bg-[#002590] text-white shadow-lg shadow-[#002590]/15 transition hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002590] focus-visible:ring-offset-2'
-        aria-label='Open navigation menu'
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={isOpen}
       >
         <AnimatePresence mode='wait' initial={false}>
@@ -79,7 +87,7 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className='fixed inset-0 z-[40] bg-black/45 backdrop-blur-[2px]'
               aria-hidden='true'
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
             />
 
             <motion.aside
@@ -100,7 +108,7 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
                   whileTap={{ scale: 0.96 }}
                   className='inline-flex h-10 w-10 items-center justify-center rounded-full text-[#002590] transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002590] focus-visible:ring-offset-2'
                   aria-label='Close navigation menu'
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                 >
                   <X size={20} strokeWidth={2.25} />
                 </motion.button>

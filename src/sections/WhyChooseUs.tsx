@@ -110,7 +110,7 @@ function WhyChooseUs() {
           with convenience, quality, and attention to detail.
         </motion.p>
 
-        <div className='mt-16 grid w-full grid-cols-2 gap-6 md:grid-cols-3'>
+        <div className='mt-16 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {cards.map((card, index) => {
             const Icon = card.icon;
             const isActive = activeCard === index;

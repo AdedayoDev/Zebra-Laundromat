@@ -13,7 +13,7 @@ function About() {
       id='about'
       className='bg-white px-4 py-20 sm:px-6  lg:px-8 lg:py-28'
     >
-      <div className='mx-auto flex flex-col-reverse md:flex-row w-11/12 gap-12  lg:items-center lg:gap-12'>
+      <div className='mx-auto flex flex-col-reverse md:flex-col-reverse lg:flex-row w-11/12 gap-12  lg:items-center lg:gap-12'>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
