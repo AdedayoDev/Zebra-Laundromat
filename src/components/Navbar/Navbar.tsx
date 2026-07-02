@@ -71,7 +71,7 @@ function Navbar() {
     >
       <nav
         aria-label='Primary navigation'
-        className='relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8'
+        className='relative mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-4'
       >
         <Logo onNavigate={() => handleNavSelect("home")} />
 
@@ -93,7 +93,15 @@ function Navbar() {
             );
           })}
 
-          <Button variant='primary' onClick={() => handleNavSelect("contact")}>
+          <Button
+            variant='primary'
+            onClick={() => {
+              document
+                .getElementById("services")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            className='min-w-[160px]'
+          >
             Book a Service
           </Button>
         </div>

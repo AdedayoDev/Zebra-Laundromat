@@ -93,9 +93,9 @@ function Navbar() {
           })}
 
           <a
-            href='#contact'
+            href='#services'
             className='book-service-btn inline-flex items-center rounded-full px-5 py-3 text-sm font-semibold shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002590] focus-visible:ring-offset-2'
-            onClick={() => handleNavSelect("contact")}
+            onClick={() => handleNavSelect("services")}
           >
             Book a Service
           </a>
@@ -144,9 +144,9 @@ function Navbar() {
             })}
 
             <a
-              href='#contact'
+              href='#services'
               className='book-service-btn mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold shadow-sm'
-              onClick={() => handleNavSelect("contact")}
+              onClick={() => handleNavSelect("services")}
             >
               Book a Service
             </a>

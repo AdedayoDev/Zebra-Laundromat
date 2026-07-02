@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
-import Button from "../components/Button/Button";
 
 interface ContactFormData {
   name: string;
@@ -47,7 +46,14 @@ function Contact() {
     service: "",
     message: "",
   });
-
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | "";
+    message: string;
+  }>({
+    type: "",
+    message: "",
+  });
   const handleChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -57,9 +63,53 @@ function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData);
+
+    setLoading(true);
+    setStatus({
+      type: "",
+      message: "",
+    });
+
+    try {
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus({
+          type: "success",
+          message: "Your message has been sent successfully!",
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: data.message,
+        });
+      }
+    } catch {
+      setStatus({
+        type: "error",
+        message: "Unable to send message. Please try again.",
+      });
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -94,7 +144,7 @@ function Contact() {
           >
             Experience
             <br />
-             Exceptional Care
+            Exceptional Care
           </motion.h2>
 
           <motion.p
@@ -260,14 +310,31 @@ function Contact() {
                 className='w-full rounded-lg border border-black/10 bg-white px-4 py-3 text-sm outline-none transition focus:border-[#002590] focus:ring-2 focus:ring-[#002590]/20'
               />
             </div>
+            <AnimatePresence>
+              {status.message && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className={`rounded-lg p-4 text-sm ${
+                    status.type === "success"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {status.message}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-            <Button
+            <button
               type='submit'
-              variant='primary'
-              className='h-[56px] w-full rounded-lg bg-[#002590] px-6 py-3 text-white transition-all duration-300 hover:scale-[1.01]'
+              disabled={loading}
+              className='mt-4 inline-flex w-full items-center justify-center rounded-lg bg-[#002590] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#001f74] focus:outline-none focus:ring-2 focus:ring-[#002590]/50 disabled:cursor-not-allowed disabled:bg-[#7b8db2]'
             >
-              Submit
-            </Button>
+              {loading ? "Sending..." : "Send Message"}
+            </button>
           </form>
         </motion.div>
       </div>

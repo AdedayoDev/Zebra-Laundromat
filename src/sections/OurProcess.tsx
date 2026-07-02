@@ -51,7 +51,7 @@ function OurProcess() {
       className='w-full bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
       aria-labelledby='our-process-heading'
     >
-      <div className='mx-auto flex max-w-7xl flex-col gap-12 lg:flex-row lg:items-center lg:gap-12'>
+      <div className='mx-auto flex max-w-7xl flex-col-reverse gap-12 lg:flex-row lg:items-center lg:gap-12'>
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}

@@ -31,15 +31,12 @@ const serviceCards = [
 
 function Services() {
   const handleBookService = () => {
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    window.open("https://wa.me/2349134448903", "_blank", "noopener,noreferrer");
   };
 
   return (
     <section
-      id='services'
+      
       className='scroll-mt-24 bg-[#002590] px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
     >
       <div className='mx-auto max-w-7xl'>
@@ -56,13 +53,13 @@ function Services() {
           <h2 className='text-3xl font-bold text-white sm:text-4xl lg:text-[46px]'>
             Our Core Services
           </h2>
-          <p className='mx-auto mt-4 max-w-[700px] text-base leading-8 text-white/85 sm:text-lg lg:text-[20px]'>
+          <p id='services' className='mx-auto mt-4 max-w-[700px] text-base leading-8 text-white/85 sm:text-lg lg:text-[20px]'>
             Designed for individuals, families, and professionals who value
             quality and convenience.
           </p>
         </motion.div>
 
-        <div className='mt-16 grid gap-8 lg:grid-cols-2'>
+        <div  className='mt-16 grid gap-8 lg:grid-cols-2'>
           {serviceCards.map((service, index) => (
             <motion.article
               key={service.title}

@@ -11,6 +11,7 @@ import Results from "../sections/Results";
 import Services from "../sections/Services";
 import Testimonials from "../sections/Testimonials";
 import WhyChooseUs from "../sections/WhyChooseUs";
+import WhatsAppFloat from "../components/WhatsAppFloat";
 
 function LandingPage() {
   return (
@@ -28,6 +29,7 @@ function LandingPage() {
       <FutureExpansion />
       <Location />
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

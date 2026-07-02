@@ -79,22 +79,30 @@ function CTA({ backgroundImage }: CTAProps) {
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeUp}
             transition={{ duration: 0.5, delay: 0.16, ease: "easeOut" }}
-            className='mt-10 flex flex-col gap-4 sm:flex-row'
+            className='w-10/12 mx-auto md:w-auto mt-10 flex flex-col gap-4 sm:flex-row'
           >
-            <Button
-            variant='tertiary'
-              onClick={scrollToContact}
-              className='w-full rounded-lg bg-[#00DA40] px-6 py-3 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-[#00C23A] sm:w-auto'
-            >
-              Book a Service
-            </Button>
-            <Button
-              variant='secondary'
-              onClick={scrollToContact}
-              className='w-full rounded-lg border-2 border-white bg-transparent px-6 py-3 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-white hover:text-[#002590] sm:w-auto'
-            >
-              Contact Us
-            </Button>
+            <div className='w-full sm:w-[220px]'>
+              <Button
+                variant='tertiary'
+                onClick={() => {
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className='w-full rounded-full bg-[#00DA40] px-6 py-3 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-[#00C23A]'
+              >
+                Book a Service
+              </Button>
+            </div>
+            <div className='w-full sm:w-[220px]'>
+              <Button
+                variant='secondary'
+                onClick={scrollToContact}
+                className='w-full rounded-full border-2 border-white bg-transparent px-6 py-3 text-white transition-all duration-300 hover:scale-[1.03] hover:bg-white hover:text-[#002590]'
+              >
+                Contact Us
+              </Button>
+            </div>
           </motion.div>
         </div>
       </div>

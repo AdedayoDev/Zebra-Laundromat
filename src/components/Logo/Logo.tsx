@@ -14,7 +14,7 @@ function Logo({ onNavigate }: LogoProps) {
       className='flex items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002590] focus-visible:ring-offset-2'
       aria-label='Go to the home section'
     >
-      <img src='/logo.svg' alt='Zebra Laundromat logo' className='h-20 w-20' />
+      <img src='/logo.svg' alt='Zebra Laundromat logo' className='h-15 w-15' />
       
     </a>
   );

@@ -147,7 +147,14 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
                   <Button
                     variant='primary'
                     className='w-full justify-center rounded-2xl px-5 py-3 text-base shadow-lg shadow-[#002590]/10'
-                    onClick={() => handleSelect("contact")}
+                    onClick={() => {
+                      document
+                        .getElementById("services")
+                        ?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                    }}
                   >
                     Book a Service
                   </Button>

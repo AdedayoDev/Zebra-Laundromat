@@ -1,3 +1,19 @@
+import type { ButtonHTMLAttributes } from 'react';
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'secondary' | string;
+};
+
+function Button({ className = '', ...props }: ButtonProps) {
+  return (
+    <button
+      type='button'
+      className={`rounded-full bg-[#002590] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#001e7a] ${className}`}
+      {...props}
+    />
+  );
+}
+
 function Services() {
   return (
     <section id='services' className='scroll-mt-24 px-4 py-24 sm:px-6 lg:px-8'>
@@ -13,6 +29,20 @@ function Services() {
             From everyday laundry to specialty garments, our team delivers
             thoughtful care with dependable pickup and delivery options.
           </p>
+
+          <Button
+            variant='primary'
+            className='mt-8 w-full sm:w-auto'
+            onClick={() =>
+              window.open(
+                "https://wa.me/2349134448903",
+                "_blank",
+                "noopener,noreferrer",
+              )
+            }
+          >
+            Book a Service
+          </Button>
         </div>
 
         <div className='mt-12 grid gap-6 md:grid-cols-3'>

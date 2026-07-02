@@ -136,7 +136,7 @@ function Testimonials() {
                     boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
                   }}
                   transition={{ duration: 0.3 }}
-                  className='min-h-[280px] w-[300px] rounded-[24px] bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:w-[360px] lg:w-[420px]'
+                  className='min-h-[240px] w-[300px] rounded-[24px] bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:w-[360px] sm:p-7 lg:w-[420px] lg:p-8'
                 >
                   <div className='flex items-center gap-1'>
                     {Array.from({ length: 5 }).map((_, starIndex) => (
@@ -149,13 +149,13 @@ function Testimonials() {
                   </div>
 
                   <p
-                    className='mt-5 text-left text-[18px] leading-[180%] text-[#444748]'
+                    className='mt-4 text-left text-[16px] leading-[170%] text-[#444748] sm:text-[17px]'
                     style={{ fontFamily: "Inter, sans-serif" }}
                   >
                     “{testimonial.review}”
                   </p>
 
-                  <div className='mt-8 flex items-center gap-4'>
+                  <div className='mt-6 flex items-center gap-4'>
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}

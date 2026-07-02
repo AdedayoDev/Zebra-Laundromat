@@ -31,7 +31,7 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className='mb-8 flex flex-col items-start gap-2 md:gap-3 self-start  sm:flex-row sm:items-center'
+          className='mb-8 flex  items-start gap-2 md:gap-3 self-start  sm:flex-row sm:items-center'
         >
           <div className='flex -space-x-3'>
             {trustAvatars.map((avatar, index) => (
@@ -65,8 +65,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className='hero-heading text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl'
           >
-            Laundry & Cleaning Services
-            <span className='mt-2 block'>Designed For Modern Living</span>
+            Laundry & Cleaning Services Designed For Modern Living
           </motion.h1>
 
           <motion.p
@@ -84,13 +83,21 @@ function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className='mt-8 flex flex-col gap-4 sm:flex-row'
+            className='mt-8 flex flex-col gap-4 sm:flex-row '
           >
-            <a href='#contact' className='w-full sm:w-auto'>
-              <Button variant='primary' className='w-full sm:w-auto'>
+            <div className='w-full sm:w-[220px]'>
+              <Button
+                variant='primary'
+                className='w-full'
+                onClick={() => {
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
                 Book a Service
               </Button>
-            </a>
+            </div>
             <a href='#services' className='w-full sm:w-auto'>
               <Button
                 variant='secondary'
@@ -118,7 +125,7 @@ function Hero() {
                 delay: 0.45 + index * 0.08,
                 ease: "easeOut",
               }}
-              className="flex flex-col gap-3 items-center justify-center"
+              className='flex flex-col gap-3 items-center justify-center'
             >
               <img src={feature.icon} alt='' className='mx-auto h-10 w-10' />
               <h2 className='hero-description mt-4 text-xs text-center md:text-base font-semibold text-white'>

@@ -8,7 +8,6 @@ import {
   WashingMachine,
   type LucideIcon,
 } from "lucide-react";
-import { useState, type KeyboardEvent } from "react";
 
 interface WhyChooseCard {
   id: number;
@@ -57,18 +56,6 @@ const cards: WhyChooseCard[] = [
 ];
 
 function WhyChooseUs() {
-  const [activeCard, setActiveCard] = useState<number>(0);
-
-  const handleCardKeyDown = (
-    event: KeyboardEvent<HTMLButtonElement>,
-    index: number,
-  ) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      setActiveCard(index);
-    }
-  };
-
   return (
     <section
       className='w-full bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
@@ -113,14 +100,11 @@ function WhyChooseUs() {
         <div className='mt-16 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {cards.map((card, index) => {
             const Icon = card.icon;
-            const isActive = activeCard === index;
 
             return (
               <motion.button
                 key={card.id}
                 type='button'
-                role='button'
-                tabIndex={0}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
@@ -130,39 +114,23 @@ function WhyChooseUs() {
                   ease: "easeOut",
                 }}
                 whileHover={{ scale: 1.01, y: -4 }}
-                onClick={() => setActiveCard(index)}
-                onKeyDown={(event) => handleCardKeyDown(event, index)}
-                aria-pressed={isActive}
-                className={`cursor-pointer rounded-2xl border p-8 text-left transition-all duration-300 ${
-                  isActive
-                    ? "border-transparent bg-[#002590] shadow-xl"
-                    : "border-[rgba(0,0,0,0.08)] bg-white shadow-sm hover:shadow-lg"
-                }`}
+                className='group cursor-pointer rounded-2xl border border-[rgba(0,0,0,0.08)] bg-white p-8 text-left shadow-sm transition-all duration-300 md:hover:border-transparent md:hover:bg-[#002590] md:hover:shadow-xl'
               >
-                <div
-                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-full ${
-                    isActive ? "bg-white/10" : "bg-[#002590]/10"
-                  }`}
-                >
+                <div className='mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#002590]/10 transition-colors duration-300 md:group-hover:bg-white/10'>
                   <Icon
-                    className='h-8 w-8'
+                    className='h-8 w-8 text-[#002590] transition-colors duration-300 md:group-hover:text-white'
                     strokeWidth={1.8}
-                    color={isActive ? "#FFFFFF" : "#002590"}
                   />
                 </div>
 
                 <h3
-                  className={`text-[24px] font-semibold leading-[140%] ${
-                    isActive ? "text-white" : "text-black"
-                  }`}
+                  className='text-[24px] font-semibold leading-[140%] text-black transition-colors duration-300 md:group-hover:text-white'
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   {card.title}
                 </h3>
                 <p
-                  className={`mt-3 text-[16px] leading-[170%] ${
-                    isActive ? "text-white/90" : "text-[#444748]"
-                  }`}
+                  className='mt-3 text-[16px] leading-[170%] text-[#444748] transition-colors duration-300 md:group-hover:text-white/90'
                   style={{ fontFamily: "Manrope, sans-serif" }}
                 >
                   {card.description}
