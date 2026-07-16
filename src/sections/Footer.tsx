@@ -79,8 +79,8 @@ function Footer() {
                 12/14 Debbie Moore,
                 <br />
                 Agungi Road,
-                <br />
-                Ikeja, Lagos.
+                
+                Eti-Osa, Lagos.
               </p>
             </div>
           </motion.div>
