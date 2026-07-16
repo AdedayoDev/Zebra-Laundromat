@@ -28,14 +28,17 @@ function HowItWorks() {
   return (
     <section
       id='how-it-works'
-      className='bg-[#002590] px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
+      className='bg-[#002590] text-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
     >
       <div className='mx-auto max-w-6xl text-center'>
         <div className='inline-flex items-center justify-center rounded-full bg-[#D62828] px-5 py-2 text-sm font-semibold text-white'>
           Simple Process
         </div>
 
-        <h2 className='premium-heading mx-auto mt-6 max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl'>
+        <h2
+          className='premium-heading mx-auto mt-6 max-w-3xl text-4xl font-semibold leading-tight  sm:text-5xl md:text-7xl'
+          style={{ color: "#ffffff" }}
+        >
           How it Works
         </h2>
 
