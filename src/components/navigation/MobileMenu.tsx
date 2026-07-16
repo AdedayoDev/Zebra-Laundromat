@@ -1,8 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
+import { openWhatsApp } from "../../utils/whatsapp";
 import type { NavItem } from "../../types";
 
 interface MobileMenuProps {
@@ -148,16 +150,25 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
                     variant='primary'
                     className='w-full justify-center rounded-2xl px-5 py-3 text-base shadow-lg shadow-[#002590]/10'
                     onClick={() => {
-                      document
-                        .getElementById("services")
-                        ?.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
+                      document.getElementById("services")?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
                     }}
                   >
                     Book a Service
                   </Button>
+                </div>
+
+                <div className='mt-auto px-0 pb-6 pt-6'>
+                  <button
+                    type='button'
+                    onClick={openWhatsApp}
+                    className='inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#00DA40] px-5 py-3 text-base font-semibold text-white transition hover:bg-[#00C23A]'
+                  >
+                    <FaWhatsapp className='h-5 w-5' />
+                    Chat on WhatsApp
+                  </button>
                 </div>
               </div>
             </motion.aside>

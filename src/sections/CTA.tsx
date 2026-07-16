@@ -25,6 +25,7 @@ function CTA({ backgroundImage }: CTAProps) {
       className='relative w-full overflow-hidden'
       aria-labelledby='cta-heading'
     >
+      <div id='pricing' className='sr-only' />
       <div className='absolute inset-0'>
         <div
           className='absolute inset-0 bg-cover bg-center bg-no-repeat'

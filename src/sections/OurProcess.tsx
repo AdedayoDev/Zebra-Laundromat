@@ -48,6 +48,7 @@ const galleryImages = [
 function OurProcess() {
   return (
     <section
+      id='how-it-works'
       className='w-full bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
       aria-labelledby='our-process-heading'
     >

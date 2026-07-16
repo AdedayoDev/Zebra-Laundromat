@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 html {
@@ -6,59 +6,70 @@ html {
 }
 
 :root {
-  --primary-color: #002590;
-  --text-color: #000000;
-  --white-color: #ffffff;
+  --zebra-blue: #002598;
+  --quick-red: #EA2126;
+  --detergent-white: #F8F8F9;
+  --kinetic-green: #00D84A;
+  --softener-blue: #1A5CFF;
+  --text-dark: #0A0A0A;
+  --text-muted: #6B7280;
+  --border-light: #E5E7EB;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Inter, sans-serif;
-  background: #ffffff;
-  color: var(--text-color);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--detergent-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.hero-heading {
-  font-family: "Jost", sans-serif;
+.hero-heading,
+.premium-heading,
+.about-heading,
+.section-heading,
+.footer-heading,
+.contact-heading {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  color: var(--zebra-blue);
+  letter-spacing: -0.02em;
+}
+
+.premium-heading {
   font-weight: 600;
 }
 
-.hero-description {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-}
-
-.about-label {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-}
-
-.about-heading {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-}
-
-.about-text {
-  font-family: "Inter", sans-serif;
+.hero-description,
+.about-text,
+.nav-link,
+.book-service-btn,
+.footer-text,
+.supporting-text,
+.faq-answer,
+.contact-text {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .nav-link {
   transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-  color: var(--primary-color);
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--zebra-blue);
 }
 
 .active-link {
-  color: var(--primary-color);
+  color: var(--zebra-blue);
   font-weight: 600;
 }
 
 .book-service-btn {
-  background: var(--primary-color);
-  color: var(--white-color);
+  background: var(--zebra-blue);
+  color: #ffffff;
   transition: all 0.3s ease;
 }
 

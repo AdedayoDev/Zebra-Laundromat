@@ -4,184 +4,112 @@ import { Star } from "lucide-react";
 interface Testimonial {
   id: number;
   name: string;
-  role: string;
-  image: string;
+  location: string;
+  initial: string;
   review: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Leonard Dubois",
-    role: "Executive Director",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    initial: "A",
+    name: "Adebola K.",
+    location: "Agungi Resident",
     review:
-      "Zebra Laundromat has completely transformed how I care for my wardrobe. The attention to detail and pristine finishing on my bespoke suits is unmatched.",
+      "I was skeptical at first, but Zebra changed how I do laundry. The space was clean, the staff was friendly, and my clothes were ready in under an hour. I'll definitely be back.",
   },
   {
     id: 2,
-    name: "Amelia Brooks",
-    role: "Interior Designer",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+    initial: "C",
+    name: "Chiona O.",
+    location: "Lekki Resident",
     review:
-      "Reliable, polished, and incredibly thoughtful. Every delivery feels like a premium service experience from start to finish.",
+      "As a working mom, I never have time for laundry. The full-service option is a lifesaver. I drop off, run errands, and come back to neatly folded clothes. Absolutely worth it.",
   },
   {
     id: 3,
-    name: "Daniel Kim",
-    role: "Hotel Operations Manager",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
+    initial: "T",
+    name: "Tunde M.",
+    location: "Eti-Osa Resident",
     review:
-      "Their turnaround times are impressive and the quality is always consistent. I trust them with high-priority garments and linens.",
-  },
-  {
-    id: 4,
-    name: "Sofia Martinez",
-    role: "Creative Consultant",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
-    review:
-      "The team combines professionalism and care in a way that feels personal. I never worry about my special pieces when they handle them.",
-  },
-  {
-    id: 5,
-    name: "Nathan Cole",
-    role: "Property Manager",
-    image:
-      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=200&q=80",
-    review:
-      "Exceptional standards and seamless communication. It is rare to find a service that feels both efficient and genuinely attentive.",
-  },
-  {
-    id: 6,
-    name: "Maya Chen",
-    role: "Business Owner",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
-    review:
-      "Professional, dependable, and detail oriented. Their service has become an essential part of my weekly routine.",
+      "The self-service machines are fast and easy to use. I love that I can choose hot or cold water. The Wi-Fi and AC make waiting actually pleasant. Best laundromat in the area.",
   },
 ];
 
-const duplicatedTestimonials = [...testimonials, ...testimonials];
-
 function Testimonials() {
   return (
-    <section
-      className='w-full bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28'
-      aria-labelledby='testimonials-heading'
-    >
-      <div className='mx-auto flex max-w-7xl flex-col items-center text-center'>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-          className='text-[20px] font-semibold text-[#00DA40]'
-          style={{ fontFamily: "Inter, sans-serif" }}
-        >
-          Testimonials
-        </motion.p>
-
-        <motion.h2
-          id='testimonials-heading'
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.05, ease: "easeOut" }}
-          className='mt-4 text-[30px] font-bold leading-[120%] text-black sm:text-[36px] lg:text-[40px]'
-          style={{ fontFamily: "Inter, sans-serif" }}
-        >
-          What Our Clients Say
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-          className='mx-auto mt-4 max-w-[800px] text-[16px] font-normal leading-[170%] text-black/70 sm:text-[18px] lg:text-[20px]'
-          style={{ fontFamily: "Inter, sans-serif" }}
-        >
-          Discover why clients trust us for exceptional laundry and cleaning
-          services. Their experiences reflect our commitment to quality,
-          reliability, and outstanding customer care.
-        </motion.p>
-
-        <div className='mt-16 w-full overflow-hidden'>
+    <section className='bg-white px-4 py-20 sm:px-6 lg:px-8 lg:py-28'>
+      <div className='mx-auto max-w-7xl'>
+        <div className='flex flex-col items-center text-center'>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
-            className='w-full'
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className='inline-flex rounded-full tracking-wider leading-1.5 uppercase bg-[#00DA40] px-5 py-2 text-sm font-medium text-white'
           >
-            <motion.div
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                duration: 40,
-                ease: "linear",
-                repeat: Number.POSITIVE_INFINITY,
-              }}
-              className='flex w-max items-stretch gap-6 will-change-transform'
-            >
-              {duplicatedTestimonials.map((testimonial, index) => (
-                <motion.article
-                  key={`${testimonial.id}-${index}`}
-                  whileHover={{
-                    y: -4,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className='min-h-[240px] w-[300px] rounded-[24px] bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:w-[360px] sm:p-7 lg:w-[420px] lg:p-8'
-                >
-                  <div className='flex items-center gap-1'>
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <Star
-                        key={`${testimonial.id}-${starIndex}`}
-                        size={20}
-                        className='fill-[#FFD700] text-[#FFD700]'
-                      />
-                    ))}
-                  </div>
-
-                  <p
-                    className='mt-4 text-left text-[16px] leading-[170%] text-[#444748] sm:text-[17px]'
-                    style={{ fontFamily: "Inter, sans-serif" }}
-                  >
-                    “{testimonial.review}”
-                  </p>
-
-                  <div className='mt-6 flex items-center gap-4'>
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      loading='lazy'
-                      className='h-14 w-14 rounded-full object-cover'
-                    />
-                    <div className='text-left'>
-                      <h3
-                        className='text-[18px] font-semibold text-black'
-                        style={{ fontFamily: "Inter, sans-serif" }}
-                      >
-                        {testimonial.name}
-                      </h3>
-                      <p
-                        className='text-[14px] text-[#444748]'
-                        style={{ fontFamily: "Inter, sans-serif" }}
-                      >
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </motion.div>
+            Testimonials
           </motion.div>
+
+          <motion.h2
+            id='testimonials-heading'
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
+            className='premium-heading mt-6 max-w-3xl text-4xl font-semibold tracking-[-0.03em] text-[#002590] sm:text-5xl lg:text-6xl'
+          >
+            What Our Customers Say About Us
+          </motion.h2>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+          className='mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3'
+        >
+          {testimonials.map((testimonial, index) => (
+            <motion.article
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.16 + index * 0.08,
+                ease: "easeOut",
+              }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              className='rounded-[2rem] bg-white p-8 shadow-[0_25px_60px_rgba(0,0,0,0.08)] transition-transform duration-300'
+            >
+              <div className='flex items-center gap-2'>
+                {Array.from({ length: 5 }).map((_, starIndex) => (
+                  <Star key={starIndex} size={18} className='text-[#D62828]' />
+                ))}
+              </div>
+
+              <p className='mt-6 text-left text-base leading-8 text-slate-700'>
+                “{testimonial.review}”
+              </p>
+
+              <div className='mt-8 flex items-center gap-4'>
+                <div className='flex h-14 w-14 items-center justify-center rounded-full bg-[#002590] text-lg font-bold text-white'>
+                  {testimonial.initial}
+                </div>
+                <div className='text-left'>
+                  <p className='text-base font-semibold text-[#002590]'>
+                    {testimonial.name}
+                  </p>
+                  <p className='mt-1 text-sm text-slate-500'>
+                    {testimonial.location}
+                  </p>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

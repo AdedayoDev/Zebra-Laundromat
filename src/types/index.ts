@@ -11,7 +11,7 @@ export interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'whatsapp';
 }
 
 export interface LogoProps {
