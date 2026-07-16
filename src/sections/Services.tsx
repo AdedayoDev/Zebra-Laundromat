@@ -33,7 +33,7 @@ const serviceCards = [
     price: "₦8,000",
     priceDetail: "Per load up to 10kg",
     note: "(Roughly 10–20 regular clothing items)",
-    buttonLabel: "Undo My Laundry",
+    buttonLabel: "Handle My Laundry",
     variant: "full",
   },
 ];
