@@ -26,7 +26,10 @@ body {
   overflow-x: hidden;
 }
 
-.hero-heading,
+.hero-heading {
+  color: var(--kinetic-green)
+}
+
 .premium-heading,
 .about-heading,
 .section-heading,
