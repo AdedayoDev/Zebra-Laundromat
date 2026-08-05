@@ -22,7 +22,7 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2 ${variantClasses[variant]} ${className}`.trim()}
+      className={`inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold shadow-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2 ${variantClasses[variant]} ${className}`.trim()}
     >
       {children}
     </button>

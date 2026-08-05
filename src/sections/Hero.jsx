@@ -8,12 +8,7 @@ const trustAvatars = [
   "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
 ];
 
-const features = [
-  { title: "Professional Equipment", icon: "/profession-icon.svg" },
-  { title: "Fast Turnaround", icon: "/fast-icon.svg" },
-  { title: "Trained Specialists", icon: "/trained-icon.svg" },
-  { title: "Reliable Service", icon: "/reliable.svg" },
-];
+
 
 function Hero() {
   return (
@@ -28,36 +23,6 @@ function Hero() {
       </div>
 
       <div className='relative mx-auto flex min-h-screen w-[90%] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8'>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className='mb-8 flex  items-start gap-2 md:gap-3 self-start  sm:flex-row sm:items-center'
-        >
-          <div className='flex -space-x-3'>
-            {trustAvatars.map((avatar, index) => (
-              <img
-                key={avatar}
-                src={avatar}
-                alt={`Happy customer ${index + 1}`}
-                className='h-11 w-11 rounded-full border-2 border-white object-cover shadow-lg'
-              />
-            ))}
-          </div>
-
-          <div className='flex flex-col'>
-            <div className='flex items-center gap-1 text-[#FFD700]'>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <span key={index} aria-hidden='true'>
-                  ★
-                </span>
-              ))}
-            </div>
-            <p className='text-sm font-medium text-white sm:text-base'>
-              Over 200 Happy Customers
-            </p>
-          </div>
-        </motion.div>
 
         <div className='max-w-full '>
           <motion.h1
@@ -104,31 +69,7 @@ function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className='mt-16 grid gap-4 grid-cols-4'
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.45 + index * 0.08,
-                ease: "easeOut",
-              }}
-              className='flex flex-col gap-3 items-center justify-center'
-            >
-              <img src={feature.icon} alt='' className='mx-auto h-10 w-10' />
-              <h2 className='hero-description mt-4 text-xs text-center md:text-base font-semibold text-white'>
-                {feature.title}
-              </h2>
-            </motion.div>
-          ))}
-        </motion.div>
+        
       </div>
     </section>
   );

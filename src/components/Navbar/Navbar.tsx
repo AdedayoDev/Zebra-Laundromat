@@ -10,6 +10,7 @@ const navigationItems: NavItem[] = [
   { label: "Pricing", href: "#pricing", id: "pricing" },
   { label: "FAQ", href: "#faq", id: "faq" },
   { label: "Location", href: "#location", id: "location" },
+  { label: "Get Help", href: "/get-help", id: "get-help-page" },
 ];
 
 const whatsappUrl = "https://wa.me/234XXXXXXXXXX";
@@ -148,6 +149,13 @@ function Navbar() {
                   href={item.href}
                   onClick={(event) => {
                     event.preventDefault();
+
+                    if (item.id === "get-help-page") {
+                      window.location.assign(item.href);
+                      setIsMenuOpen(false);
+                      return;
+                    }
+
                     scrollToSection(item.id);
                   }}
                   className={`rounded-full px-1 py-2 text-[16px] font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2 ${
