@@ -21,7 +21,7 @@ function Footer() {
             <img
               src='/footer-logo.svg'
               alt='Zebra Laundromat logo'
-              className='w-[180px]'
+              className='w-45'
             />
             <p className='mt-5 max-w-md text-base leading-8 text-white/80'>
               Turning laundry from a boring household chore into a happy,
@@ -41,7 +41,7 @@ function Footer() {
               <li>
                 <a
                   href='#location'
-                  className='block text-base text-white/80 transition duration-300 hover:text-[var(--quick-red)]'
+                  className='block text-base text-white/80 transition duration-300 hover:text-(--quick-red)'
                 >
                   Location
                 </a>
@@ -49,7 +49,7 @@ function Footer() {
               <li>
                 <a
                   href='#faq'
-                  className='block text-base text-white/80 transition duration-300 hover:text-[var(--quick-red)]'
+                  className='block text-base text-white/80 transition duration-300 hover:text-(--quick-red)'
                 >
                   FAQ
                 </a>
@@ -57,7 +57,7 @@ function Footer() {
               <li>
                 <Link
                   to='/policy'
-                  className='block text-base text-white/80 transition duration-300 hover:text-[var(--quick-red)]'
+                  className='block text-base text-white/80 transition duration-300 hover:text-(--quick-red)'
                 >
                   Policies
                 </Link>

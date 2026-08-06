@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Accordion from "../../components/Accordion";
 import GetHelpPolicyHeader from "../../components/GetHelpPolicyHeader";
 import Location from "../../sections/Location";
@@ -179,6 +180,9 @@ const DryerItems = [
 
 
 export const GetHelp = () => {
+  useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
   return (
     <div className='bg-(--detergent-white)'>
       <GetHelpPolicyHeader
