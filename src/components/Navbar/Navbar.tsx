@@ -178,7 +178,7 @@ function Navbar() {
               type='button'
               variant='whatsapp'
               onClick={openWhatsApp}
-              className='rounded-xl px-6 py-3 text-[15px] shadow-lg shadow-[#D62828]/20'
+              className='rounded-full px-6 py-3 text-[15px] shadow-lg shadow-[#D62828]/20'
             >
               <span className='mr-2 inline-flex items-center'>
                 <MessageCircleMore size={18} strokeWidth={2} />
