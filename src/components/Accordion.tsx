@@ -26,7 +26,7 @@ const Accordion = ({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const location = useLocation();
   const isPolicyPage = location.pathname === "/policy";
-  const accentColorClass = isPolicyPage ? "text-[#EA2126]" : "text-gray-900";
+  const accentColorClass = isPolicyPage ? "text-[#002598]" : "text-gray-900";
   const dotColorClass = isPolicyPage ? "bg-[#EA2126]" : "bg-(--softener-blue)";
 
   return (
@@ -70,7 +70,7 @@ const Accordion = ({
                       {item.title}
                     </h3>
                     {item.showUnderline ? (
-                      <div className='mt-1 h-0.5 w-full min-w-10/12 md:min-w-5xl mx-auto bg-[#EA2126]' />
+                      <div className='mt-1 h-0.5 w-full min-w-10/12  md:min-w-2xl lg:min-w-5xl mx-auto bg-[#EA2126]' />
                     ) : null}
                   </div>
                 </div>
