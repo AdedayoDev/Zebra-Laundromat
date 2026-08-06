@@ -1,5 +1,6 @@
 import Accordion from "../../components/Accordion";
 import GetHelpPolicyHeader from "../../components/GetHelpPolicyHeader";
+import FAQ from "../../sections/FAQ";
 
 const washerItems = [
   {
@@ -183,7 +184,7 @@ export const GetHelp = () => {
         body='Need assistance or have a question? Our team is here to help with bookings, service inquiries, and support every step of the way'
       />
 
-      <section className='px-4 py-10 sm:px-6 lg:px-8 lg:py-16 '>
+      <section className='px-4 py-8 sm:px-6 lg:px-8 lg:py-10 '>
         <div className='mx-auto max-w-6xl '>
           <Accordion
             items={washerItems}
@@ -193,7 +194,7 @@ export const GetHelp = () => {
         </div>
       </section>
 
-      <section className='px-4 py-10 sm:px-6 lg:px-8 lg:py-16 '>
+      <section className='px-4 py-8 sm:px-6 lg:px-8 lg:py-10 '>
         <div className='mx-auto max-w-6xl '>
           <Accordion
             items={DryerItems}
@@ -202,6 +203,8 @@ export const GetHelp = () => {
           />
         </div>
       </section>
+
+      <FAQ/>
     </div>
   );
 };

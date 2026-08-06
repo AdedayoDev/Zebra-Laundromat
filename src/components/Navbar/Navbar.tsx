@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, MessageCircleMore, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import type { NavItem } from "../../types";
 import Button from "../Button/Button";
 
@@ -19,6 +20,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,6 +103,18 @@ function Navbar() {
     }
   };
 
+  const handleNavigation = (item: NavItem) => {
+    setActiveSection(item.id);
+    setIsMenuOpen(false);
+
+    if (item.href.startsWith("/")) {
+      navigate(item.href);
+      return;
+    }
+
+    scrollToSection(item.id);
+  };
+
   const openWhatsApp = () => {
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setIsMenuOpen(false);
@@ -121,21 +135,17 @@ function Navbar() {
         aria-label='Primary navigation'
         className='mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8'
       >
-        <a
-          href='#hero'
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToSection("hero");
-          }}
+        <Link
+          to='/'
           className='flex items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2'
-          aria-label='Go to the hero section'
+          aria-label='Go to the home page'
         >
           <img
             src='/logo.svg'
             alt='Zebra Laundromat logo'
             className='h-12 w-12 sm:h-14 sm:w-14'
           />
-        </a>
+        </Link>
 
         <div className='hidden items-center lg:flex'>
           <div className='flex items-center gap-8 xl:gap-8'>
@@ -149,14 +159,7 @@ function Navbar() {
                   href={item.href}
                   onClick={(event) => {
                     event.preventDefault();
-
-                    if (item.id === "get-help-page") {
-                      window.location.assign(item.href);
-                      setIsMenuOpen(false);
-                      return;
-                    }
-
-                    scrollToSection(item.id);
+                    handleNavigation(item);
                   }}
                   className={`rounded-full px-1 py-2 text-[16px] font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2 ${
                     isActive
@@ -238,21 +241,18 @@ function Navbar() {
               onClick={(event) => event.stopPropagation()}
             >
               <div className='flex items-center justify-between border-b border-slate-200 px-5 py-5'>
-                <a
-                  href='#hero'
-                  onClick={(event) => {
-                    event.preventDefault();
-                    scrollToSection("hero");
-                  }}
+                <Link
+                  to='/'
+                  onClick={() => setIsMenuOpen(false)}
                   className='rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2'
-                  aria-label='Go to the hero section'
+                  aria-label='Go to the home page'
                 >
                   <img
                     src='/logo.svg'
                     alt='Zebra Laundromat logo'
                     className='h-12 w-12'
                   />
-                </a>
+                </Link>
                 <button
                   type='button'
                   className='inline-flex h-10 w-10 items-center justify-center rounded-full text-[#111111] transition hover:bg-slate-100 hover:text-[#D62828] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D62828] focus-visible:ring-offset-2'
@@ -281,7 +281,7 @@ function Navbar() {
                         href={item.href}
                         onClick={(event) => {
                           event.preventDefault();
-                          scrollToSection(item.id);
+                          handleNavigation(item);
                         }}
                         className={`flex items-center rounded-2xl border-l-4 px-4 py-3 text-base font-medium transition-all duration-300 ${
                           isActive

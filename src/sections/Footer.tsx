@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -54,12 +55,12 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href='#'
+                <Link
+                  to='/policy'
                   className='block text-base text-white/80 transition duration-300 hover:text-[var(--quick-red)]'
                 >
                   Policies
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>
@@ -78,9 +79,7 @@ function Footer() {
               <p>
                 12/14 Debbie Moore,
                 <br />
-                Agungi Road,
-                
-                Eti-Osa, Lagos.
+                Agungi Road, Eti-Osa, Lagos.
               </p>
             </div>
           </motion.div>
