@@ -70,7 +70,7 @@ const Accordion = ({
                       {item.title}
                     </h3>
                     {item.showUnderline ? (
-                      <div className='mt-1 h-0.5 w-full bg-[#EA2126]' />
+                      <div className='mt-1 h-0.5 w-full min-w-10/12 md:min-w-5xl mx-auto bg-[#EA2126]' />
                     ) : null}
                   </div>
                 </div>

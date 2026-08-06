@@ -1,6 +1,6 @@
 import Accordion from "../../components/Accordion";
 import GetHelpPolicyHeader from "../../components/GetHelpPolicyHeader";
-import FAQ from "../../sections/FAQ";
+import Location from "../../sections/Location";
 
 const washerItems = [
   {
@@ -204,7 +204,7 @@ export const GetHelp = () => {
         </div>
       </section>
 
-      <FAQ/>
+       <Location />
     </div>
   );
 };
