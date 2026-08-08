@@ -160,7 +160,7 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
                   </Button>
                 </div>
 
-                <div className='mt-auto px-0 pb-6 pt-6'>
+                <div className='mt-auto px-0  pb-6'>
                   <button
                     type='button'
                     onClick={openWhatsApp}

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, MessageCircleMore, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import type { NavItem } from "../../types";
 import Button from "../Button/Button";
 
@@ -20,7 +20,9 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const [pendingSection, setPendingSection] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,6 +89,14 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!pendingSection || location.pathname !== "/") {
+      return;
+    }
+
+
+  }, [location.pathname, pendingSection]);
+
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     setIsMenuOpen(false);
@@ -109,6 +119,12 @@ function Navbar() {
 
     if (item.href.startsWith("/")) {
       navigate(item.href);
+      return;
+    }
+
+    if (location.pathname !== "/") {
+      setPendingSection(item.id);
+      navigate("/");
       return;
     }
 
