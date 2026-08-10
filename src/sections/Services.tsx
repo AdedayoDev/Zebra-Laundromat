@@ -4,6 +4,7 @@ import { openWhatsApp } from "../utils/whatsapp";
 const serviceCards = [
   {
     id: "self",
+    icon: "/self-services.svg",
     title: "Self-Service",
     description:
       "Want to do your laundry yourself? We'll help you sort and weigh your laundry, then you can use our commercial machines to get it done in about an hour.",
@@ -21,11 +22,12 @@ const serviceCards = [
   },
   {
     id: "full",
-    title: "Full Service",
+    icon: "/full-service.svg",
+    title: "Drop off Service",
     description:
-      "Spend your time doing the things you enjoy while we take care of your laundry. Simply drop off your clothes and we'll wash, dry and neatly fold everything for you. Come back to fresh, clean laundry that's neatly folded and ready for pickup.",
+      "Spend your time doing the things you enjoy while we take care of your laundry. Simply drop off your clothes and we will wash, dry and neatly fold everything for you. Come back to fresh, clean laundry that's neatly folded and ready for pickup.",
     features: [
-      "We'll do all the work for you",
+      "We will do all the work for you",
       "Wash, dry and neatly fold your laundry",
       "Ready at your scheduled pickup time",
       "Perfect for busy professionals, families and anyone short on time",
@@ -37,45 +39,6 @@ const serviceCards = [
     variant: "full",
   },
 ];
-
-function BasketIcon({className}: {className?: string}) {
-  return (
-    <span className={`text-3xl ${className}`} aria-hidden='true'>🧺</span>
-  );
-}
-
-function StarClusterIcon({className}: {className?: string}) {
-  return (
-    <svg
-      viewBox='0 0 64 64'
-      className={`  ${className}`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <polygon
-        points='22,6 27,21 43,21 30,30 35,46 22,36 9,46 14,30 1,21 17,21'
-        fill='#FFC700'
-        stroke='#000'
-        strokeWidth='1.5'
-        strokeLinejoin='round'
-      />
-      <polygon
-        points='44,18 48,28 58,28 50,34 53,44 44,38 35,44 38,34 30,28 40,28'
-        fill='#FFD950'
-        stroke='#000'
-        strokeWidth='1.5'
-        strokeLinejoin='round'
-      />
-      <polygon
-        points='38,40 41,46 47,46 42,50 44,56 38,52 32,56 34,50 29,46 35,46'
-        fill='#FFE77A'
-        stroke='#000'
-        strokeWidth='1.5'
-        strokeLinejoin='round'
-      />
-    </svg>
-  );
-}
 
 function Services() {
   return (
@@ -91,9 +54,46 @@ function Services() {
             </span>
           </div>
 
-          <h2 className='premium-heading mt-6 text-2xlfont-extrabold tracking-[-0.03em] text-[#002590] sm:text-5xl md:text-6xl'>
-            Two Ways To Do Your Laundry
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+            className='premium-heading mt-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] text-[#002598] leading-tight'
+          >
+            <span className='relative inline-flex items-center'>
+              <span className='inline-block'>Two Ways To Do Your Laundry</span>
+              <motion.span
+                className='ml-4 hidden md:inline-block h-2.5 w-2.5 rounded-full bg-[#00D84A]'
+                animate={{
+                  y: [0, -6, 0],
+                  scale: [1, 1.08, 1],
+                  opacity: [1, 0.8, 1],
+                }}
+                transition={{
+                  duration: 1.6,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "easeInOut",
+                }}
+                aria-hidden
+              />
+            </span>
+          </motion.h2>
+
+          <div className='mt-4 flex items-center justify-center'>
+            <div className='h-[1px] w-36 bg-[#002598]' />
+            <motion.div
+              className='h-[3px] w-6 bg-[#00D84A] ml-2 rounded'
+              animate={{ scaleX: [1, 1.3, 1], opacity: [1, 0.75, 1] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              aria-hidden
+            />
+          </div>
 
           <p className='mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg'>
             Select the service that fits your schedule and experience a premium
@@ -122,9 +122,24 @@ function Services() {
                     : "border border-[#002590] bg-transparent text-slate-900"
                 }`}
               >
-                <div className='mb-6 inline-flex h-14 w-14 items-center justify-center  bg-[#002590] rounded-xl shadow-[0_14px_30px_rgba(0,37,144,0.18)]'>
-                  {isFull ? <StarClusterIcon  className="bg-white/10 p-2
-                    rounded-xl"/> : <BasketIcon />}
+                <div className='mb-6 inline-flex  items-center justify-center  rounded-xl shadow-[0_14px_30px_rgba(0,37,144,0.18)] '>
+                  {isFull ? (
+                    <div className='inline-flex items-center justify-center rounded-xl bg-slate-100 p-4 transition-colors duration-300'>
+                      <img
+                        src={service.icon}
+                        alt={service.title}
+                        className='w-8 h-8'
+                      />
+                    </div>
+                  ) : (
+                    <div className='inline-flex items-center justify-center rounded-xl p-4 border border-[#002590] transition-colors duration-300'>
+                      <img
+                        src={service.icon}
+                        alt={service.title}
+                        className='w-8 h-8'
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <h3
