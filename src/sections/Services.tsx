@@ -54,46 +54,51 @@ function Services() {
             </span>
           </div>
 
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.65, ease: "easeOut" }}
-            className='premium-heading mt-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] text-[#002598] leading-tight'
+            className='relative mt-6 flex max-w-3xl flex-col items-center text-center'
           >
-            <span className='relative inline-flex items-center'>
-              <span className='inline-block'>Two Ways To Do Your Laundry</span>
-              <motion.span
-                className='ml-4 hidden md:inline-block h-2.5 w-2.5 rounded-full bg-[#00D84A]'
-                animate={{
-                  y: [0, -6, 0],
-                  scale: [1, 1.08, 1],
-                  opacity: [1, 0.8, 1],
-                }}
+            <div className='absolute left-0 top-1/2 hidden h-10 w-px -translate-y-1/2 bg-[#002598] md:block' />
+
+            <h2 className='premium-heading text-4xl font-extrabold tracking-[-0.04em] text-[#002598] leading-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
+              <span className='relative inline-flex items-center'>
+                Two Ways To Do Your Laundry
+                <motion.span
+                  className='ml-3 hidden h-2.5 w-2.5 rounded-full bg-[#00D84A] md:inline-flex'
+                  animate={{
+                    y: [0, -5, 0],
+                    scale: [1, 1.08, 1],
+                    opacity: [1, 0.8, 1],
+                  }}
+                  transition={{
+                    duration: 1.6,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "easeInOut",
+                  }}
+                  aria-hidden
+                />
+              </span>
+            </h2>
+
+            <div className='mt-5 flex items-center gap-3'>
+              <div className='h-px min-w-[5rem] flex-1 bg-[#002598]' />
+              <motion.div
+                className='h-1 w-8 rounded-full bg-[#00D84A]'
+                animate={{ scaleX: [1, 1.25, 1], opacity: [1, 0.8, 1] }}
                 transition={{
                   duration: 1.6,
                   repeat: Infinity,
-                  repeatType: "loop",
                   ease: "easeInOut",
                 }}
                 aria-hidden
               />
-            </span>
-          </motion.h2>
-
-          <div className='mt-4 flex items-center justify-center'>
-            <div className='h-[1px] w-36 bg-[#002598]' />
-            <motion.div
-              className='h-[3px] w-6 bg-[#00D84A] ml-2 rounded'
-              animate={{ scaleX: [1, 1.3, 1], opacity: [1, 0.75, 1] }}
-              transition={{
-                duration: 1.6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              aria-hidden
-            />
-          </div>
+              <div className='h-px min-w-[5rem] flex-1 bg-[#002598]' />
+            </div>
+          </motion.div>
 
           <p className='mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg'>
             Select the service that fits your schedule and experience a premium
@@ -116,12 +121,17 @@ function Services() {
                   delay: index * 0.12,
                 }}
                 whileHover={{ y: -8 }}
-                className={`group rounded-[1.75rem] p-8 shadow-[0_30px_70px_rgba(0,37,144,0.10)]  ${
+                className={`relative group rounded-[1.75rem] p-8 shadow-[0_30px_70px_rgba(0,37,144,0.10)]  ${
                   isFull
                     ? "bg-[#002590] text-white"
                     : "border border-[#002590] bg-transparent text-slate-900"
                 }`}
               >
+                {isFull && (
+                  <div className='absolute right-5 top-5 rounded-full bg-[#EA2126] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-white shadow-[0_12px_25px_rgba(234,33,38,0.18)]'>
+                    Most Popular
+                  </div>
+                )}
                 <div className='mb-6 inline-flex  items-center justify-center  rounded-xl shadow-[0_14px_30px_rgba(0,37,144,0.18)] '>
                   {isFull ? (
                     <div className='inline-flex items-center justify-center rounded-xl bg-slate-100 p-4 transition-colors duration-300'>
@@ -211,10 +221,10 @@ function Services() {
                   type='button'
                   onClick={openWhatsApp}
                   whileHover={{ scale: 1.02 }}
-                  className={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-colors duration-300 ${
+                  className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-300 ${
                     isFull
-                      ? "border border-white bg-[#002590] text-white hover:bg-white hover:text-[#002590]"
-                      : "border border-[#002590] bg-transparent text-[#002590] hover:bg-[#002590] hover:text-white"
+                      ? " text-[#002590] bg-white "
+                      : "bg-[#002590] text-white"
                   }`}
                 >
                   {service.buttonLabel}

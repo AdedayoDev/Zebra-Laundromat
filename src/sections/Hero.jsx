@@ -2,12 +2,6 @@ import { motion } from "framer-motion";
 import Button from "../components/Button/Button";
 import { openWhatsApp } from "../utils/whatsapp";
 
-const trustAvatars = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
-];
-
 
 
 function Hero() {
@@ -19,10 +13,10 @@ function Hero() {
           alt='Modern laundromat interior'
           className='h-full w-full object-cover'
         />
-        <div className='absolute inset-0 bg-[rgba(0,0,0,0.45)]' />
+        <div className='absolute inset-0 bg-[rgba(0,0,0,0.45)]' />      
       </div>
 
-      <div className='relative mx-auto flex min-h-screen w-[90%] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 lg:px-8'>
+      <div className='relative mx-auto flex min-h-svh w-[90%] max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8'>
 
         <div className='max-w-full '>
           <motion.h1
