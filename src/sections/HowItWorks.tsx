@@ -15,7 +15,7 @@ const steps = [
     number: "03",
     title: "Choose Your Service",
     description:
-      "Choose whether you'd like to wash your laundry yourself or let our team handle everything for you.",
+      "Choose whether you would like to wash your laundry yourself or let our team handle everything for you.",
   },
   {
     number: "04",

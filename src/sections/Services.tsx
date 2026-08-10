@@ -7,7 +7,7 @@ const serviceCards = [
     icon: "/self-services.svg",
     title: "Self-Service",
     description:
-      "Want to do your laundry yourself? We'll help you sort and weigh your laundry, then you can use our commercial machines to get it done in about an hour.",
+      "Want to do your laundry yourself? We will help you sort and weigh your laundry, then you can use our commercial machines to get it done in about an hour.",
     features: [
       "Choose your own wash settings",
       "Staff available to help",

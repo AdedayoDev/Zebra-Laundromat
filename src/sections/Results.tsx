@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Droplets, Zap } from "lucide-react";
 
 const featureCards = [
   {
@@ -123,7 +122,7 @@ function Results() {
           }}
           className='mx-auto mt-6 max-w-2xl text-center text-base leading-8 text-slate-700 sm:text-lg'
         >
-          Whether you're catching up on work, spending time with family, or
+          Whether you are catching up on work, spending time with family, or
           simply resting, Zebra makes laundry one less thing to worry about.
         </motion.p>
 

@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     name: "Adebola K.",
     location: "Agungi Resident",
     review:
-      "I was skeptical at first, but Zebra changed how I do laundry. The space was clean, the staff was friendly, and my clothes were ready in under an hour. I'll definitely be back.",
+      "I was skeptical at first, but Zebra changed how I do laundry. The space was clean, the staff was friendly, and my clothes were ready in under an hour. I will definitely be back.",
   },
   {
     id: 2,

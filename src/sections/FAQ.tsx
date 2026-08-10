@@ -147,7 +147,7 @@ function FAQ() {
                       {Array.isArray(item.answer) ? (
                         <ul className='mt-2 space-y-3 text-base leading-7 text-[var(--text-muted)] sm:text-base'>
                           {item.answer.map((line) => (
-                            <li key={line} className='list-disc pl-5'>
+                            <li key={line} className='list-inside list-disc pl-5'>
                               {line}
                             </li>
                           ))}
