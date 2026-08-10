@@ -103,7 +103,7 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
               aria-label='Mobile navigation'
               onClick={(event) => event.stopPropagation()}
             >
-              <div className='flex items-center justify-between border-b border-slate-200 px-5 py-5'>
+              <div className='flex items-center justify-around border-b border-slate-200 px-5 py-5'>
                 <Logo onNavigate={() => handleSelect("home")} />
                 <motion.button
                   type='button'
@@ -160,7 +160,7 @@ function MobileMenu({ items, activeSection, onSelect }: MobileMenuProps) {
                   </Button>
                 </div>
 
-                <div className='mt-auto px-0  pb-6'>
+                <div className=' px-0  pb-6'>
                   <button
                     type='button'
                     onClick={openWhatsApp}
