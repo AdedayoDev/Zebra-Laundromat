@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, MessageCircleMore, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import type { NavItem } from "../../types";
 import Button from "../Button/Button";
@@ -23,6 +23,7 @@ function Navbar() {
   const [pendingSection, setPendingSection] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const navTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +87,9 @@ function Navbar() {
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      if (navTimerRef.current) {
+        clearTimeout(navTimerRef.current);
+      }
     };
   }, []);
 
@@ -148,10 +152,23 @@ function Navbar() {
   const handleNavigation = (item: NavItem) => {
     setActiveSection(item.id);
     setIsMenuOpen(false);
-
+    // If the menu is open (mobile), delay navigation so exit animation can play
     if (item.href.startsWith("/")) {
-      // support hash in href like /policy#getHelpPolicyHeader
       const [path, hash] = item.href.split("#");
+
+      if (isMenuOpen) {
+        if (hash) setPendingSection(hash);
+        // close menu and navigate after the exit animation completes
+        setIsMenuOpen(false);
+        if (navTimerRef.current) clearTimeout(navTimerRef.current);
+        navTimerRef.current = window.setTimeout(() => {
+          navigate(path || item.href);
+          navTimerRef.current = null;
+        }, 300);
+        return;
+      }
+
+      // not mobile menu — perform immediate navigation/scroll behavior
       if (hash) {
         if (location.pathname !== path) {
           setPendingSection(hash);
@@ -159,7 +176,6 @@ function Navbar() {
           return;
         }
 
-        // already on the target path, scroll directly
         const el = document.getElementById(hash);
         if (el) {
           el.scrollIntoView({ behavior: "smooth", block: "start" });
