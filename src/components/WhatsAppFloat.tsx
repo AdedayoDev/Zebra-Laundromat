@@ -6,7 +6,7 @@ function WhatsAppFloat() {
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
-    <div className='fixed bottom-4 right-4 z-[80] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6'>
+    <div className='fixed bottom-4 right-4 z-[60] flex max-w-[calc(100vw-2rem)] flex-col items-end gap-3 sm:bottom-6 sm:right-6'>
       <motion.div
         initial={{ opacity: 0, y: 10, scale: 0.95 }}
         animate={{ opacity: 1, y: [0, -6, 0], scale: [1, 1.02, 1] }}

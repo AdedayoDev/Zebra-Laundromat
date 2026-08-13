@@ -286,6 +286,7 @@ function Navbar() {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: 90 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
+             
             >
               {isMenuOpen ? (
                 <X size={20} strokeWidth={2.25} />

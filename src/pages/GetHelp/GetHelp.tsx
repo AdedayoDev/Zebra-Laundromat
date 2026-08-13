@@ -165,7 +165,7 @@ const DryerItems = [
           </li>
         </ol>
 
-        <br/>
+        <br />
         <p>
           If Additional Time Feature is turned on, additional dryer time may be
           purchased at cycle start or while dryer is running. Remove knits when
@@ -177,21 +177,19 @@ const DryerItems = [
   },
 ];
 
-
-
 export const GetHelp = () => {
   useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div className='bg-(--detergent-white)'>
+    <div className='bg-[#F8F8F9]'>
       <GetHelpPolicyHeader
         header='Get Help'
         body='Need assistance or have a question? Our team is here to help with bookings, service inquiries, and support every step of the way'
       />
 
-      <section className='px-4 py-8 sm:px-6 lg:px-8 lg:py-10 '>
-        <div className='mx-auto max-w-6xl '>
+      <section className='px-4 py-8 sm:px-6 lg:px-8 lg:py-10'>
+        <div className='mx-auto max-w-6xl space-y-6'>
           <Accordion
             items={washerItems}
             ImageSrc='/self-services.svg'
@@ -200,8 +198,8 @@ export const GetHelp = () => {
         </div>
       </section>
 
-      <section className='px-4 py-8 sm:px-6 lg:px-8 lg:py-10 '>
-        <div className='mx-auto max-w-6xl '>
+      <section className='px-4 py-8 sm:px-6 lg:px-8 lg:py-10'>
+        <div className='mx-auto max-w-6xl space-y-6'>
           <Accordion
             items={DryerItems}
             ImageSrc='/self-services.svg'
@@ -210,7 +208,7 @@ export const GetHelp = () => {
         </div>
       </section>
 
-       <Location />
+      <Location />
     </div>
   );
 };
