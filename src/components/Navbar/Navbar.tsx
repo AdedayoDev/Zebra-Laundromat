@@ -90,12 +90,44 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!pendingSection || location.pathname !== "/") {
+    if (!pendingSection) {
       return;
     }
 
+    const el = document.getElementById(pendingSection);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setPendingSection(null);
+      return;
+    }
 
+    // If element not found yet, wait briefly and try again (handles small render delays)
+    const tryScroll = setInterval(() => {
+      const target = document.getElementById(pendingSection);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        setPendingSection(null);
+        clearInterval(tryScroll);
+      }
+    }, 100);
+
+    return () => clearInterval(tryScroll as unknown as number);
   }, [location.pathname, pendingSection]);
+
+  // Handle direct hash navigation (e.g. Link to="/policy#getHelpPolicyHeader")
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      // slight delay to ensure the target is rendered
+      setTimeout(
+        () => el.scrollIntoView({ behavior: "smooth", block: "start" }),
+        50,
+      );
+    }
+  }, [location.pathname, location.hash]);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -118,6 +150,23 @@ function Navbar() {
     setIsMenuOpen(false);
 
     if (item.href.startsWith("/")) {
+      // support hash in href like /policy#getHelpPolicyHeader
+      const [path, hash] = item.href.split("#");
+      if (hash) {
+        if (location.pathname !== path) {
+          setPendingSection(hash);
+          navigate(path);
+          return;
+        }
+
+        // already on the target path, scroll directly
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        return;
+      }
+
       navigate(item.href);
       return;
     }
@@ -279,7 +328,7 @@ function Navbar() {
                 </button>
               </div>
 
-              <div className='flex flex-1 flex-col justify-between px-5 py-6'>
+              <div className='flex flex-1 flex-col justify-around px-5 py-6'>
                 <div className='space-y-2'>
                   {navigationItems.map((item, index) => {
                     const isActive = activeSection === item.id;

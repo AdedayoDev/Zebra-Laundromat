@@ -56,7 +56,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to='/policy'
+                  to='/policy#getHelpPolicyHeader'
                   className='block text-base text-white/80 transition duration-300 hover:text-(--quick-red)'
                 >
                   Policies
