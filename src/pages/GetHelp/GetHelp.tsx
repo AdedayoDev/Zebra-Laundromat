@@ -9,7 +9,7 @@ import {
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import HelpCategoryCard from "../../components/HelpCentre/HelpCategoryCard";
-import Location from "../../sections/Location";
+
 
 const helpCategories = [
   {
@@ -108,7 +108,6 @@ function GetHelp() {
         </div>
       </section>
 
-      <Location />
     </main>
   );
 }
