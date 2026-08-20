@@ -1,4 +1,3 @@
-
 import Accordion from "../../components/Accordion";
 import GetHelpPolicyHeader from "../../components/GetHelpPolicyHeader";
 import Location from "../../sections/Location";
@@ -733,6 +732,7 @@ const renderBlock = (block: PolicyBlock, index: number) => {
           {block.content}
         </div>
       );
+
     default:
       return (
         <div
@@ -751,8 +751,6 @@ const renderBlock = (block: PolicyBlock, index: number) => {
 };
 
 export const Policy = () => {
-  
-
   return (
     <section className='bg-[radial-gradient(circle_at_top_left,rgba(234,33,38,0.07),transparent_32%),radial-gradient(circle_at_top_right,rgba(0,37,152,0.08),transparent_30%),#f8f8f9]'>
       <GetHelpPolicyHeader
@@ -786,7 +784,7 @@ export const Policy = () => {
       </section>
 
       <div>
-        <Location/>
+        <Location />
       </div>
     </section>
   );

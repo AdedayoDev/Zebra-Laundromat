@@ -15,6 +15,7 @@ interface AccordionProps {
   header?: string;
   showImage?: boolean;
   showDisc?: boolean;
+  initialOpenIndex?: number | null;
 }
 
 const Accordion = ({
@@ -23,8 +24,9 @@ const Accordion = ({
   header,
   showImage = true,
   showDisc = true,
+  initialOpenIndex = 0,
 }: AccordionProps) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(initialOpenIndex);
   const location = useLocation();
   const isPolicyPage = location.pathname === "/policy";
   const accentColorClass = isPolicyPage ? "text-[#002598]" : "text-gray-900";
