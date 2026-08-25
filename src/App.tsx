@@ -4,8 +4,9 @@ import GetHelp from "./pages/GetHelp/GetHelp";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./sections/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import ScrollToTop from "./components/ScrollToTop";
 import { Policy } from "./pages/Policy/Policy";
-import Location from "./sections/Location";
+import About from "./sections/About";
 import HowToUseOurMachines from "./pages/GetHelp/HowToUseOurMachines";
 import MachineUsageGuidelines from "./pages/GetHelp/MachineUsageGuidelines";
 import HealthAndSafety from "./pages/GetHelp/HealthAndSafety";
@@ -15,6 +16,7 @@ import FAQs from "./pages/GetHelp/FAQs";
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path='/' element={<LandingPage />} />
@@ -33,7 +35,7 @@ function App() {
           element={<CustomerResponsibilities />}
         />
         <Route path='/help/faqs' element={<FAQs />} />
-        <Route path='/contact' element={<Location />} />
+        <Route path='/about-zebra-laundromat' element={<About />} />
         <Route path='/policy' element={<Policy />} />
       </Routes>
       <Footer />

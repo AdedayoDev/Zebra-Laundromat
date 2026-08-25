@@ -74,12 +74,12 @@ function Footer() {
           >
             <h3 className='text-[24px] font-semibold text-white'>Contact</h3>
             <div className='mt-5 space-y-4 text-base leading-7 text-white/80'>
-              <p>+234-38-706-060-39</p>
+              <p>+234 913 444 8903</p>
               <p>hello@zebralaundromat.com</p>
               <p>
                 12/14 Debbie Moore,
                 <br />
-                Agungi Road, Eti-Osa, Lagos.
+               12, Agungi Ajiran Road, Lekki Peninsula, Lekki, Nigeria
               </p>
             </div>
           </motion.div>

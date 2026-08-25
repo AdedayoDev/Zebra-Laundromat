@@ -1,15 +1,13 @@
 import {
   BookOpen,
   HelpCircle,
-  MessageCircle,
+  Info,
   ShieldCheck,
   UserCheck,
   WashingMachine,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import HelpCategoryCard from "../../components/HelpCentre/HelpCategoryCard";
-
 
 const helpCategories = [
   {
@@ -51,19 +49,16 @@ const helpCategories = [
     icon: HelpCircle,
   },
   {
-    id: "contact",
-    title: "Contact Us",
-    description: "Get in touch with our team if you need further assistance.",
-    href: "/contact",
-    icon: MessageCircle,
+    id: "about",
+    title: "About Zebra Laundromat",
+    description:
+      "Learn about our professional laundry and cleaning services, team, and quality standards.",
+    href: "/about-zebra-laundromat",
+    icon: Info,
   },
 ];
 
 function GetHelp() {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   return (
     <main className='bg-(--detergent-white)'>
       <section className='bg-(--zebra-blue) px-4 py-14 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24'>
@@ -107,7 +102,6 @@ function GetHelp() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
