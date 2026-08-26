@@ -56,7 +56,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to='/policy#getHelpPolicyHeader'
+                  to='/policy'
                   className='block text-base text-white/80 transition duration-300 hover:text-(--quick-red)'
                 >
                   Policies
@@ -76,11 +76,7 @@ function Footer() {
             <div className='mt-5 space-y-4 text-base leading-7 text-white/80'>
               <p>+234 913 444 8903</p>
               <p>hello@zebralaundromat.com</p>
-              <p>
-                12/14 Debbie Moore,
-                <br />
-               12, Agungi Ajiran Road, Lekki Peninsula, Lekki, Nigeria
-              </p>
+              <p>12, Agungi Ajiran Road, Lekki Peninsula, Lekki, Nigeria</p>
             </div>
           </motion.div>
         </div>

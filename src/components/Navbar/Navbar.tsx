@@ -3,6 +3,7 @@ import { Menu, MessageCircleMore, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import type { NavItem } from "../../types";
+import { openWhatsApp as openSharedWhatsApp } from "../../utils/whatsapp";
 import Button from "../Button/Button";
 
 const navigationItems: NavItem[] = [
@@ -13,8 +14,6 @@ const navigationItems: NavItem[] = [
   { label: "Location", href: "#location", id: "location" },
   { label: "Get Help", href: "/get-help", id: "get-help-page" },
 ];
-
-const whatsappUrl = "https://wa.me/234XXXXXXXXXX";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -118,21 +117,6 @@ function Navbar() {
     return () => clearInterval(tryScroll as unknown as number);
   }, [location.pathname, pendingSection]);
 
-  // Handle direct hash navigation (e.g. Link to="/policy#getHelpPolicyHeader")
-  useEffect(() => {
-    if (!location.hash) return;
-
-    const id = location.hash.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      // slight delay to ensure the target is rendered
-      setTimeout(
-        () => el.scrollIntoView({ behavior: "smooth", block: "start" }),
-        50,
-      );
-    }
-  }, [location.pathname, location.hash]);
-
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     setIsMenuOpen(false);
@@ -197,7 +181,7 @@ function Navbar() {
   };
 
   const openWhatsApp = () => {
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    openSharedWhatsApp();
     setIsMenuOpen(false);
   };
 
@@ -286,7 +270,6 @@ function Navbar() {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: 90 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-             
             >
               {isMenuOpen ? (
                 <X size={20} strokeWidth={2.25} />

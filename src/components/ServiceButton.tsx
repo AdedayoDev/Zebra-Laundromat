@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { WHATSAPP_URL } from "../utils/whatsapp";
 
 interface ServiceButtonProps {
   text: string;
@@ -20,7 +21,7 @@ function ServiceButton({ text, variant, href }: ServiceButtonProps) {
     <motion.a
       whileHover={{ y: -2, scale: 1.01 }}
       whileTap={{ scale: 0.98 }}
-      href={href || "https://wa.me/2349134448903"}
+      href={href || WHATSAPP_URL}
       target='_blank'
       rel='noreferrer'
       className={`${baseClasses} ${variantClasses}`}

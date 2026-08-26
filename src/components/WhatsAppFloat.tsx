@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
+import { WHATSAPP_URL } from "../utils/whatsapp";
 
 function WhatsAppFloat() {
-  const phoneNumber = "2349134448903";
-  const whatsappUrl = `https://wa.me/${phoneNumber}`;
-
   return (
     <div className='fixed bottom-4 right-4 z-[60] flex max-w-[calc(100vw-2rem)] flex-col items-end gap-3 sm:bottom-6 sm:right-6'>
       <motion.div
@@ -21,7 +19,7 @@ function WhatsAppFloat() {
       </motion.div>
 
       <motion.a
-        href={whatsappUrl}
+        href={WHATSAPP_URL}
         target='_blank'
         rel='noreferrer'
         whileHover={{ scale: 1.05, y: -2 }}
