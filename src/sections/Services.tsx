@@ -32,7 +32,7 @@ const serviceCards = [
       "Ready at your scheduled pickup time",
       "Perfect for busy professionals, families and anyone short on time",
     ],
-    price: "₦8,000",
+    price: "₦7,000",
     priceDetail: "Per load up to 10kg",
     note: "(Roughly 10–20 regular clothing items)",
     buttonLabel: "Handle My Laundry",
